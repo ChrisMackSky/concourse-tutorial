@@ -2,7 +2,7 @@ resources:
 - name: tutorial
   type: git
   source:
-    uri: https://github.com/starkandwayne/concourse-tutorial.git
+    uri: https://github.com/ChrisMackSky/concourse-tutorial.git
     branch: develop
 
 jobs:
@@ -16,7 +16,7 @@ jobs:
     config:
       platform: linux
       image_resource:
-        type: docker-image
+        type: registry-image
         source: {repository: busybox}
       inputs:
       - name: tutorial

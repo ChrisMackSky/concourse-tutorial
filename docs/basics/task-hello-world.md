@@ -30,7 +30,7 @@ The `task_hello_world.yml` task file looks like:
 platform: linux
 
 image_resource:
-  type: docker-image
+  type: registry-image
   source: {repository: busybox}
 
 run:
@@ -60,7 +60,7 @@ Try changing the `image_resource:` and the `run:` and run a different task:
 platform: linux
 
 image_resource:
-  type: docker-image
+  type: registry-image
   source: {repository: ubuntu}
 
 run:
@@ -89,4 +89,4 @@ The reason that you can select any base `image` (or `image_resource` when [confi
 
 ## Miscellaneous
 
-If you're interested in creating new Docker images using Concourse (of course you are), then there is a future section [Create and Use Docker Images](/miscellaneous/docker-images).
+If you're interested in creating new Docker images using Concourse (of course you are), then there is a future section [Create and Use Docker Images](/miscellaneous/registry-images).

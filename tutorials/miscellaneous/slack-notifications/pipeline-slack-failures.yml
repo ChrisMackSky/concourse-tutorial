@@ -1,6 +1,6 @@
 resource_types:
 - name: slack-notification
-  type: docker-image
+  type: registry-image
   source:
     repository: cfcommunity/slack-notification-resource
 
@@ -8,7 +8,7 @@ resources:
 - name: tutorial
   type: git
   source:
-    uri: https://github.com/starkandwayne/concourse-tutorial.git
+    uri: https://github.com/ChrisMackSky/concourse-tutorial.git
     branch: develop
 - name: notify
   type: slack-notification
@@ -26,7 +26,7 @@ jobs:
     config:
       platform: linux
       image_resource:
-        type: docker-image
+        type: registry-image
         source: {repository: busybox}
       inputs:
       - name: tutorial
