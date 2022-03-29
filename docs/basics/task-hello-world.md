@@ -15,7 +15,7 @@ docker-compose up
 Now clone the Concourse Tutorial repo, switch to the task-hello-world directory, and run the command to execute the `task_hello_world.yml` task.
 
 ```
-git clone https://github.com/starkandwayne/concourse-tutorial.git
+git clone https://github.com/ChrisMackSky/concourse-tutorial.git
 cd concourse-tutorial/tutorials/basic/task-hello-world
 fly -t tutorial execute -c task_hello_world.yml
 ```
@@ -38,7 +38,7 @@ The `task_hello_world.yml` task file looks like:
 platform: linux
 
 image_resource:
-  type: docker-image
+  type: registry-image
   source: {repository: busybox}
 
 run:
@@ -76,7 +76,7 @@ Try changing the `image_resource:` and the `run:` and run a different task:
 platform: linux
 
 image_resource:
-  type: docker-image
+  type: registry-image
   source: {repository: ubuntu}
 
 run:
@@ -105,4 +105,4 @@ The reason that you can select any base `image` (or `image_resource` when [confi
 
 ## Miscellaneous
 
-If you're interested in creating new Docker images using Concourse (of course you are), then there is a future section [Create and Use Docker Images](../miscellaneous/docker-images.md).
+If you're interested in creating new Docker images using Concourse (of course you are), then there is a future section [Create and Use Docker Images](../miscellaneous/registry-images.md).
